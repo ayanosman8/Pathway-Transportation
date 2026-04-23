@@ -1,69 +1,47 @@
 @import "tailwindcss";
 
 @theme {
-  --color-background: #0a0c11;
-  --color-background-secondary: #0f1118;
-  --color-foreground: #F5F5F5;
-  --color-foreground-muted: #9A9A9A;
-  --color-primary: #2AACAA;
-  --color-primary-hover: #229090;
-  --color-accent: #C9522A;
-  --color-accent-hover: #A8421E;
-  --color-border: #1c1e26;
-  --color-card: #13151d;
-  --font-serif: var(--font-cormorant);
-  --font-sans: var(--font-dm-sans);
-}
-
-/* ── Hero diamond-lattice pattern ─────────────────────────── */
-.hero-pattern {
-  background-image:
-    repeating-linear-gradient( 45deg, transparent 0px, transparent 19px, rgba(42,172,170,0.055) 19px, rgba(42,172,170,0.055) 20px),
-    repeating-linear-gradient(-45deg, transparent 0px, transparent 19px, rgba(42,172,170,0.055) 19px, rgba(42,172,170,0.055) 20px);
+  --color-background: #F6F1EA;
+  --color-background-secondary: #EDE6DB;
+  --color-foreground: #180C0F;
+  --color-foreground-muted: #7A6A62;
+  --color-primary: #7D1A2C;
+  --color-primary-hover: #681522;
+  --color-accent: #7D1A2C;
+  --color-accent-hover: #681522;
+  --color-border: #D5C9BC;
+  --color-card: #EDE6DB;
+  --font-sans: var(--font-inter);
 }
 
 body {
-  background: #0a0c11;
-  color: #F5F5F5;
-  font-family: var(--font-sans), system-ui, sans-serif;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-serif), Georgia, serif;
+  background-color: #F6F1EA;
+  background-image: radial-gradient(rgba(125, 26, 44, 0.09) 1.5px, transparent 1.5px);
+  background-size: 26px 26px;
+  color: #180C0F;
+  font-family: var(--font-inter), system-ui, sans-serif;
 }
 
 /* ── Scrollbar ────────────────────────────────────────────── */
-::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
-}
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-::-webkit-scrollbar-thumb {
-  background: #163540;
-  border-radius: 3px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #1C4A52;
-}
-* {
-  scrollbar-width: thin;
-  scrollbar-color: #163540 transparent;
-}
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #c9b8ae; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #b8a49a; }
+* { scrollbar-width: thin; scrollbar-color: #c9b8ae transparent; }
 
-/* ── Sheet slide-in ───────────────────────────────────────── */
-@keyframes sheet-in {
-  from { transform: translateX(100%); }
-  to   { transform: translateX(0); }
+/* ── Animations ───────────────────────────────────────────── */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 @keyframes fade-in {
   from { opacity: 0; }
   to   { opacity: 1; }
 }
-.animate-sheet-in {
-  animation: sheet-in 0.28s cubic-bezier(0.32, 0.72, 0, 1);
-}
-.animate-fade-in {
-  animation: fade-in 0.2s ease-out;
-}
+.animate-fade-up { animation: fade-up 0.7s ease-out forwards; }
+.animate-fade-in { animation: fade-in 0.5s ease-out forwards; }
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
