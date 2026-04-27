@@ -37,7 +37,7 @@ export default function Services() {
   const { services } = company;
 
   return (
-    <section id="services" className="scroll-mt-16 sm:scroll-mt-20">
+    <section id="services" className="scroll-mt-16 sm:scroll-mt-20" aria-labelledby="services-heading">
 
       {/* Divider strip */}
       <div className="border-t border-b border-border" style={{ backgroundColor: "#EDE6DB" }}>
@@ -54,13 +54,60 @@ export default function Services() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
 
         {/* Section header */}
-        <div className="mb-10 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight">
-            Built Around You
-          </h2>
-          <p className="text-foreground/55 text-sm max-w-xs leading-relaxed sm:text-right">
-            Professional, licensed drivers across six service categories.
-          </p>
+        <div className="mb-10 space-y-6">
+          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
+            <div>
+              <h2 id="services-heading" className="text-3xl md:text-4xl font-bold tracking-tight leading-tight mb-3">
+                Our Services
+              </h2>
+              <p className="text-foreground/60 leading-relaxed max-w-2xl">
+                Pathway Transportation Services provides non-emergency medical transportation in the Columbus, Ohio area including Westerville, Reynoldsburg, Grove City, Dublin, and nearby communities.
+              </p>
+            </div>
+          </div>
+
+          {/* Feature cards - compact */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+            <div className="bg-card border border-border p-4 space-y-2 hover:border-primary/50 transition-colors">
+              <div className="flex items-center gap-2">
+                <svg className="w-5 h-5 text-primary shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                <h3 className="font-semibold text-sm">Ohio Medicaid Provider</h3>
+              </div>
+              <p className="text-xs text-foreground/55 leading-relaxed">Approved with active NPI number</p>
+            </div>
+
+            <div className="bg-card border border-border p-4 space-y-2 hover:border-primary/50 transition-colors">
+              <div className="flex items-center gap-2">
+                <svg className="w-5 h-5 text-primary shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                </svg>
+                <h3 className="font-semibold text-sm">EMFTS-Certified</h3>
+              </div>
+              <p className="text-xs text-foreground/55 leading-relaxed">All vehicles fully inspected & certified</p>
+            </div>
+
+            <div className="bg-card border border-border p-4 space-y-2 hover:border-primary/50 transition-colors">
+              <div className="flex items-center gap-2">
+                <svg className="w-5 h-5 text-primary shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
+                </svg>
+                <h3 className="font-semibold text-sm">Flexible Scheduling</h3>
+              </div>
+              <p className="text-xs text-foreground/55 leading-relaxed">Same-day & advance booking</p>
+            </div>
+
+            <div className="bg-card border border-border p-4 space-y-2 hover:border-primary/50 transition-colors">
+              <div className="flex items-center gap-2">
+                <svg className="w-5 h-5 text-primary shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                </svg>
+                <h3 className="font-semibold text-sm">Professional Drivers</h3>
+              </div>
+              <p className="text-xs text-foreground/55 leading-relaxed">Trained & experienced staff</p>
+            </div>
+          </div>
         </div>
 
         {/* Compact service rows */}

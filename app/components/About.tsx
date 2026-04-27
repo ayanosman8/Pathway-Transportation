@@ -4,7 +4,7 @@ export default function About() {
   const { about } = company;
 
   return (
-    <section id="about" className="relative py-16 sm:py-24 scroll-mt-16 sm:scroll-mt-20 overflow-hidden" style={{ backgroundColor: "#EDE6DB" }}>
+    <section id="about" className="relative py-16 sm:py-24 scroll-mt-16 sm:scroll-mt-20 overflow-hidden" style={{ backgroundColor: "#EDE6DB" }} aria-labelledby="about-heading">
 
       {/* Large background watermark */}
       <div className="absolute -top-4 right-0 text-[200px] sm:text-[260px] font-extrabold text-primary/[0.04] select-none leading-none pointer-events-none tracking-tighter pr-4">
@@ -25,7 +25,7 @@ export default function About() {
 
             {/* Headline */}
             <div>
-              <h2 className="text-4xl md:text-5xl font-bold leading-tight tracking-tight">
+              <h2 id="about-heading" className="text-4xl md:text-5xl font-bold leading-tight tracking-tight">
                 {about.headline}
                 <span className="block text-primary">{about.headlineAccent}</span>
               </h2>
@@ -42,14 +42,55 @@ export default function About() {
               {about.body.map((p, i) => <p key={i}>{p}</p>)}
             </div>
 
-            {/* Stats — bordered cards */}
-            <div className="grid grid-cols-3 gap-3 pt-2">
-              {about.stats.map((stat) => (
-                <div key={stat.label} className="border border-primary/20 bg-background/60 px-4 py-4 text-center">
-                  <p className="text-2xl font-extrabold text-primary leading-none">{stat.value}</p>
-                  <p className="text-[10px] text-foreground-muted mt-2 leading-tight uppercase tracking-wide">{stat.label}</p>
+            {/* Certification Highlight */}
+            <div className="bg-primary/10 border-l-4 border-primary p-5 space-y-3">
+              <h3 className="font-bold text-base text-foreground">Certified & Compliant</h3>
+              <p className="text-sm text-foreground/70 leading-relaxed">
+                Pathway Transportation Services is an approved Ohio Medicaid provider with an active NPI number. All of our vehicles are fully inspected and certified by the Ohio Board of Emergency Medical, Fire, and Transportation Services (EMFTS), ensuring the highest standards of safety and compliance.
+              </p>
+            </div>
+
+            {/* Why Choose Us */}
+            <div className="space-y-3 pt-2">
+              <h3 className="font-bold text-lg">Why Choose Us:</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div className="flex items-start gap-2 text-sm">
+                  <svg className="w-5 h-5 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span className="text-foreground/70">Approved Ohio Medicaid Provider</span>
                 </div>
-              ))}
+                <div className="flex items-start gap-2 text-sm">
+                  <svg className="w-5 h-5 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span className="text-foreground/70">NPI Registered</span>
+                </div>
+                <div className="flex items-start gap-2 text-sm">
+                  <svg className="w-5 h-5 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span className="text-foreground/70">EMFTS Certified Vehicles</span>
+                </div>
+                <div className="flex items-start gap-2 text-sm">
+                  <svg className="w-5 h-5 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span className="text-foreground/70">Safe & Reliable Transportation</span>
+                </div>
+                <div className="flex items-start gap-2 text-sm">
+                  <svg className="w-5 h-5 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span className="text-foreground/70">Professional & Friendly Drivers</span>
+                </div>
+                <div className="flex items-start gap-2 text-sm">
+                  <svg className="w-5 h-5 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span className="text-foreground/70">Serving Columbus & Surrounding Areas</span>
+                </div>
+              </div>
             </div>
 
             <a
@@ -83,8 +124,8 @@ export default function About() {
 
             {/* Floating stat card */}
             <div className="absolute -bottom-5 -left-6 bg-primary px-6 py-5 shadow-lg">
-              <p className="text-white text-2xl font-extrabold leading-none">10+</p>
-              <p className="text-white/60 text-[10px] uppercase tracking-widest mt-1.5">Years of Service</p>
+              <p className="text-white text-xl font-extrabold leading-none">Medicaid</p>
+              <p className="text-white/60 text-[10px] uppercase tracking-widest mt-1.5">Approved Provider</p>
             </div>
           </div>
 

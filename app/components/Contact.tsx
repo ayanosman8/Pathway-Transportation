@@ -6,7 +6,7 @@ import { company } from "@/config/company";
 export default function Contact() {
   const { phone, phoneRaw, email, address } = company;
   const [submitted, setSubmitted] = useState(false);
-  const [form, setForm] = useState({ name: "", email: "", phone: "", service: "", message: "" });
+  const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) {
     setForm(prev => ({ ...prev, [e.target.name]: e.target.value }));
@@ -18,7 +18,7 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="py-16 sm:py-24 scroll-mt-16 sm:scroll-mt-20">
+    <section id="contact" className="py-16 sm:py-24 scroll-mt-16 sm:scroll-mt-20" aria-labelledby="contact-heading">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
 
@@ -29,12 +29,12 @@ export default function Contact() {
                 <div className="h-px w-8 bg-primary" />
                 <p className="text-primary font-semibold tracking-widest uppercase text-xs">Reach Us</p>
               </div>
-              <h2 className="text-4xl md:text-5xl font-bold leading-tight tracking-tight">
-                Let&apos;s Get You
-                <span className="block text-primary">Where You&apos;re Going.</span>
+              <h2 id="contact-heading" className="text-4xl md:text-5xl font-bold leading-tight tracking-tight">
+                Request Transportation
+                <span className="block text-primary">Today.</span>
               </h2>
               <p className="text-foreground/60 leading-relaxed">
-                Have a question or need to schedule a ride? Fill out the form or reach us directly — we respond promptly.
+                Have a question or need to schedule a ride? Call us directly or fill out the form below. We respond promptly to all inquiries.
               </p>
             </div>
 
@@ -90,67 +90,56 @@ export default function Contact() {
                   Thank you for reaching out. A member of our team will be in touch shortly.
                 </p>
                 <button
-                  onClick={() => { setSubmitted(false); setForm({ name: "", email: "", phone: "", service: "", message: "" }); }}
+                  onClick={() => { setSubmitted(false); setForm({ name: "", email: "", phone: "", message: "" }); }}
                   className="text-sm text-primary font-semibold hover:text-primary-hover transition-colors mt-2"
                 >
                   Send another message
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-5">
+              <form onSubmit={handleSubmit} className="space-y-5" aria-label="Contact form">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
-                    <label className="block text-xs text-foreground-muted uppercase tracking-widest mb-2 font-medium">Full Name</label>
+                    <label htmlFor="name" className="block text-xs text-foreground-muted uppercase tracking-widest mb-2 font-medium">Full Name</label>
                     <input
-                      name="name" type="text" required value={form.name} onChange={handleChange}
-                      className="w-full bg-background border border-border px-4 py-3 text-sm text-foreground placeholder:text-foreground-muted/40 focus:outline-none focus:border-primary transition-colors"
+                      id="name" name="name" type="text" required value={form.name} onChange={handleChange}
+                      className="w-full bg-background border border-border px-4 py-3 text-sm text-foreground placeholder:text-foreground-muted/40 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-colors"
                       placeholder="Jane Smith"
+                      aria-required="true"
                     />
                   </div>
                   <div>
-                    <label className="block text-xs text-foreground-muted uppercase tracking-widest mb-2 font-medium">Phone</label>
+                    <label htmlFor="phone" className="block text-xs text-foreground-muted uppercase tracking-widest mb-2 font-medium">Phone</label>
                     <input
-                      name="phone" type="tel" value={form.phone} onChange={handleChange}
-                      className="w-full bg-background border border-border px-4 py-3 text-sm text-foreground placeholder:text-foreground-muted/40 focus:outline-none focus:border-primary transition-colors"
+                      id="phone" name="phone" type="tel" value={form.phone} onChange={handleChange}
+                      className="w-full bg-background border border-border px-4 py-3 text-sm text-foreground placeholder:text-foreground-muted/40 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-colors"
                       placeholder="(614) 555-0000"
+                      aria-label="Phone number"
                     />
                   </div>
                 </div>
                 <div>
-                  <label className="block text-xs text-foreground-muted uppercase tracking-widest mb-2 font-medium">Email</label>
+                  <label htmlFor="email" className="block text-xs text-foreground-muted uppercase tracking-widest mb-2 font-medium">Email</label>
                   <input
-                    name="email" type="email" required value={form.email} onChange={handleChange}
-                    className="w-full bg-background border border-border px-4 py-3 text-sm text-foreground placeholder:text-foreground-muted/40 focus:outline-none focus:border-primary transition-colors"
+                    id="email" name="email" type="email" required value={form.email} onChange={handleChange}
+                    className="w-full bg-background border border-border px-4 py-3 text-sm text-foreground placeholder:text-foreground-muted/40 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-colors"
                     placeholder="jane@example.com"
+                    aria-required="true"
                   />
                 </div>
                 <div>
-                  <label className="block text-xs text-foreground-muted uppercase tracking-widest mb-2 font-medium">Service Needed</label>
-                  <select
-                    name="service" value={form.service} onChange={handleChange}
-                    className="w-full bg-background border border-border px-4 py-3 text-sm text-foreground focus:outline-none focus:border-primary transition-colors appearance-none cursor-pointer"
-                  >
-                    <option value="">Select a service...</option>
-                    <option>Non-Emergency Medical</option>
-                    <option>Corporate &amp; Executive</option>
-                    <option>Airport Transfer</option>
-                    <option>Senior Transport</option>
-                    <option>Event &amp; Group</option>
-                    <option>School &amp; Youth</option>
-                    <option>Other</option>
-                  </select>
-                </div>
-                <div>
-                  <label className="block text-xs text-foreground-muted uppercase tracking-widest mb-2 font-medium">Message</label>
+                  <label htmlFor="message" className="block text-xs text-foreground-muted uppercase tracking-widest mb-2 font-medium">Message / Questions</label>
                   <textarea
-                    name="message" rows={4} value={form.message} onChange={handleChange}
-                    className="w-full bg-background border border-border px-4 py-3 text-sm text-foreground placeholder:text-foreground-muted/40 focus:outline-none focus:border-primary transition-colors resize-none"
+                    id="message" name="message" rows={4} value={form.message} onChange={handleChange}
+                    className="w-full bg-background border border-border px-4 py-3 text-sm text-foreground placeholder:text-foreground-muted/40 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-colors resize-none"
                     placeholder="Tell us about your transportation needs..."
+                    aria-label="Message or questions"
                   />
                 </div>
                 <button
                   type="submit"
-                  className="w-full py-4 bg-primary text-white text-sm font-semibold hover:bg-primary-hover transition-colors"
+                  className="w-full py-4 bg-primary text-white text-sm font-semibold hover:bg-primary-hover transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                  aria-label="Send message"
                 >
                   Send Message
                 </button>

@@ -7,10 +7,10 @@ export default function Hero() {
   const { tagline, hero } = company;
 
   return (
-    <section className="relative min-h-screen overflow-hidden">
+    <section className="relative min-h-screen overflow-hidden" aria-label="Hero section">
 
       {/* Left: main content */}
-      <div className="flex flex-col justify-center min-h-screen px-6 sm:px-12 lg:px-20 xl:px-28 py-32 lg:py-0 relative z-10 lg:pr-[260px] xl:pr-[280px]">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col justify-center min-h-screen py-32 lg:py-0 relative z-10 lg:pr-[260px] xl:pr-[280px]">
 
         {/* Eyebrow */}
         <motion.div
@@ -18,6 +18,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.1 }}
+          aria-hidden="true"
         >
           <div className="h-px w-10 bg-primary" />
           <span className="text-primary text-xs font-semibold tracking-[0.2em] uppercase">{tagline}</span>
@@ -43,6 +44,7 @@ export default function Hero() {
           initial={{ scaleX: 0, originX: 0 }}
           animate={{ scaleX: 1 }}
           transition={{ duration: 0.5, delay: 0.55 }}
+          aria-hidden="true"
         />
 
         {/* Subheading */}
@@ -63,17 +65,19 @@ export default function Hero() {
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.75 }}
         >
           <a
-            href="#contact"
-            className="inline-flex items-center justify-center px-8 py-4 bg-primary text-white text-sm font-semibold hover:bg-primary-hover transition-colors"
+            href={`tel:${company.phoneRaw}`}
+            className="inline-flex items-center justify-center px-8 py-4 bg-primary text-white text-sm font-semibold hover:bg-primary-hover transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+            aria-label="Call now to schedule a ride"
           >
-            Contact Us
+            Call Now to Schedule a Ride
           </a>
           <a
-            href="#services"
-            className="inline-flex items-center gap-2 justify-center px-8 py-4 border border-foreground/20 text-foreground/70 text-sm font-semibold hover:border-primary hover:text-primary transition-colors group"
+            href="#contact"
+            className="inline-flex items-center gap-2 justify-center px-8 py-4 border border-foreground/20 text-foreground/70 text-sm font-semibold hover:border-primary hover:text-primary transition-colors group focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+            aria-label="Request transportation today"
           >
-            Our Services
-            <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            Request Transportation Today
+            <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
               <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
           </a>
@@ -81,16 +85,17 @@ export default function Hero() {
 
       </div>
 
-      {/* Right: burgundy accent panel — absolutely positioned, shorter, inset from edge */}
+      {/* Right: burgundy accent circle — absolutely positioned */}
       <motion.div
-        className="hidden lg:flex absolute right-16 xl:right-24 top-1/2 -translate-y-1/2 w-[190px] xl:w-[210px] h-[52vh] max-h-[400px] bg-primary flex-col items-center justify-center overflow-hidden"
-        initial={{ y: 20, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
+        className="hidden lg:flex absolute left-1/2 top-1/2 -translate-x-1/4 -translate-y-1/2 w-[320px] h-[320px] xl:w-[380px] xl:h-[380px] rounded-full bg-primary flex-col items-center justify-center overflow-hidden border-[12px] border-primary/30"
+        initial={{ scale: 0.8, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
+        aria-hidden="true"
       >
         {/* Diagonal grid pattern */}
         <div
-          className="absolute inset-0"
+          className="absolute inset-0 rounded-full"
           style={{
             backgroundImage:
               "repeating-linear-gradient(45deg,transparent 0,transparent 19px,rgba(255,255,255,0.04) 19px,rgba(255,255,255,0.04) 20px)," +
@@ -99,23 +104,17 @@ export default function Hero() {
         />
 
         {/* Content */}
-        <div className="relative z-10 flex flex-col items-center text-center px-6">
-          <span className="font-inter text-[90px] xl:text-[108px] font-extrabold text-white/[0.08] select-none leading-none tracking-tighter">
+        <div className="relative z-10 flex flex-col items-center text-center px-8">
+          <span className="font-inter text-[120px] xl:text-[140px] font-extrabold text-white/[0.08] select-none leading-none tracking-tighter">
             PT
           </span>
-          <div className="border-t border-white/20 pt-4 w-full mt-1">
-            <p className="text-white/35 text-[9px] font-semibold tracking-[0.3em] uppercase">Pathway Transportation</p>
+          <div className="border-t border-white/20 pt-4 w-full mt-2">
+            <p className="text-white/35 text-[10px] font-semibold tracking-[0.3em] uppercase">Pathway Transportation</p>
           </div>
-          <p className="text-white/20 text-[10px] mt-4 leading-relaxed">
+          <p className="text-white/20 text-[11px] mt-5 leading-relaxed">
             Safe · Reliable · Professional
           </p>
         </div>
-
-        {/* Corner brackets */}
-        <div className="absolute top-6 left-6 w-7 h-7 border-t-2 border-l-2 border-white/20" />
-        <div className="absolute top-6 right-6 w-7 h-7 border-t-2 border-r-2 border-white/20" />
-        <div className="absolute bottom-6 left-6 w-7 h-7 border-b-2 border-l-2 border-white/20" />
-        <div className="absolute bottom-6 right-6 w-7 h-7 border-b-2 border-r-2 border-white/20" />
       </motion.div>
 
     </section>

@@ -1,9 +1,9 @@
 export const company = {
-  name: "Pathway Transportation",
+  name: "Pathway Transportation Services",
   initials: "PT",
-  tagline: "Moving People Forward",
+  tagline: "Safe, Reliable, Professional",
   description:
-    "Reliable transportation solutions for individuals, businesses, and communities. Safe, punctual, and professional service — every trip, every time.",
+    "Non-emergency medical transportation services in Columbus, Ohio. Safe, dependable, and professional transportation for medical appointments and everyday needs.",
 
   address: {
     line1: "Columbus, OH",
@@ -12,51 +12,51 @@ export const company = {
 
   phone: "(614) 555-0100",
   phoneRaw: "6145550100",
-  email: "info@pathwaytransportation.com",
+  email: "Admin@pathwayts.com",
 
   hero: {
     headline: "Moving You Forward,",
     headlineAccent: "Every Mile.",
     subheading:
-      "Pathway Transportation provides safe, reliable, and professional transportation services for individuals, businesses, and organizations across the region.",
+      "Safe, reliable, and professional non-emergency medical transportation in Columbus, Ohio. Approved Ohio Medicaid provider with EMFTS-certified vehicles. Serving Medicaid and private-pay clients with flexible scheduling.",
   },
 
   services: [
     {
-      title: "Non-Emergency Medical",
+      title: "Non-Emergency Medical Transportation",
       description:
-        "Dependable rides to and from medical appointments, treatments, and healthcare facilities — always on time, always with care.",
+        "Dependable rides to and from medical appointments, treatments, and healthcare facilities. EMFTS-certified vehicles ensure safe, comfortable transport.",
       icon: "medical",
     },
     {
-      title: "Corporate & Executive",
+      title: "Wheelchair Transportation",
       description:
-        "Premium transfers for professionals and executives. Arrive composed and on schedule, every time.",
-      icon: "corporate",
-    },
-    {
-      title: "Airport Transfers",
-      description:
-        "Stress-free pickups and drop-offs at all major airports. We track your flight so you never wait.",
-      icon: "airport",
-    },
-    {
-      title: "Senior Transport",
-      description:
-        "Compassionate, accessible transportation for seniors and individuals with special needs.",
+        "Specialized wheelchair-accessible vehicles with trained drivers for clients requiring mobility assistance.",
       icon: "senior",
     },
     {
-      title: "Event & Group",
+      title: "Doctor & Dialysis Appointments",
       description:
-        "Coordinated transport for weddings, corporate events, and group outings of any size.",
-      icon: "group",
+        "Regular transportation to doctor visits, dialysis treatments, rehabilitation, and therapy sessions. Always on time, always reliable.",
+      icon: "medical",
     },
     {
-      title: "School & Youth",
+      title: "Hospital Discharge Transportation",
       description:
-        "Safe, supervised transportation for students and youth programs with fully vetted drivers.",
+        "Safe and comfortable transportation for hospital discharges, ensuring you get home safely after your stay.",
+      icon: "medical",
+    },
+    {
+      title: "School & Work Transportation",
+      description:
+        "Transportation for children to and from school or after-school programs, and adults to and from work.",
       icon: "school",
+    },
+    {
+      title: "Local Transportation Services",
+      description:
+        "Scheduled and dependable transportation for ambulatory passengers throughout Columbus and surrounding areas.",
+      icon: "group",
     },
   ],
 
@@ -64,13 +64,13 @@ export const company = {
     headline: "Your Journey,",
     headlineAccent: "Our Priority",
     body: [
-      "Founded on a commitment to reliability and respect, Pathway Transportation has been connecting people to where they need to go. Whether it's a medical appointment, a corporate transfer, or everyday travel, we treat every passenger with the care they deserve.",
-      "Our professional drivers are fully licensed, background-checked, and trained to deliver a comfortable, punctual experience. We believe that getting there should be the least of your worries.",
+      "Pathway Transportation Services is a Columbus, Ohio-based transportation company dedicated to providing safe, reliable, and professional service to our community. We started this company to provide dependable and respectful transportation for individuals who need more than just a ride—they need consistency, safety, and care.",
+      "As an approved Ohio Medicaid provider with an active NPI number, and with all of our vehicles inspected, approved, and certified by the Ohio Board of Emergency Medical, Fire, and Transportation Services (EMFTS), we meet the highest standards of safety and compliance. Our mission is to provide transportation services that our clients can rely on every day, with professionalism, respect, and care.",
     ],
     stats: [
-      { value: "10+", label: "Years of Service" },
-      { value: "5,000+", label: "Trips Completed" },
-      { value: "24/7", label: "Availability" },
+      { value: "Medicaid", label: "Approved Provider" },
+      { value: "EMFTS", label: "Certified Vehicles" },
+      { value: "NPI", label: "Registered" },
     ],
   },
 
@@ -78,7 +78,7 @@ export const company = {
     headline: "Ready to Ride?",
     headlineAccent: "Book Today.",
     subheading:
-      "Schedule a ride or request a quote. Available 24/7 for all your transportation needs.",
+      "Call now to schedule a ride. We serve Medicaid and private-pay clients with same-day and advance bookings available.",
   },
 
   social: {
