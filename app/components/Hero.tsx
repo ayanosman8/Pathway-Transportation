@@ -9,8 +9,18 @@ export default function Hero() {
   return (
     <section className="relative min-h-screen overflow-hidden" aria-label="Hero section">
 
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=2000&q=80"
+          alt=""
+          className="w-full h-full object-cover opacity-10"
+          aria-hidden="true"
+        />
+      </div>
+
       {/* Left: main content */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col justify-center min-h-screen py-32 lg:py-0 relative z-10 lg:pr-[260px] xl:pr-[280px]">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col justify-center min-h-screen py-32 lg:py-0 relative z-10 lg:pr-[480px] xl:pr-[520px]">
 
         {/* Eyebrow */}
         <motion.div
@@ -85,35 +95,34 @@ export default function Hero() {
 
       </div>
 
-      {/* Right: burgundy accent circle — absolutely positioned */}
+      {/* Right: image with border — absolutely positioned */}
       <motion.div
-        className="hidden lg:flex absolute left-1/2 top-1/2 -translate-x-1/4 -translate-y-1/2 w-[320px] h-[320px] xl:w-[380px] xl:h-[380px] rounded-full bg-primary flex-col items-center justify-center overflow-hidden border-[12px] border-primary/30"
-        initial={{ scale: 0.8, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
+        className="hidden lg:block absolute right-8 xl:right-16 top-1/2 -translate-y-1/2 w-[420px] xl:w-[460px]"
+        initial={{ x: 40, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
         aria-hidden="true"
       >
-        {/* Diagonal grid pattern */}
-        <div
-          className="absolute inset-0 rounded-full"
-          style={{
-            backgroundImage:
-              "repeating-linear-gradient(45deg,transparent 0,transparent 19px,rgba(255,255,255,0.04) 19px,rgba(255,255,255,0.04) 20px)," +
-              "repeating-linear-gradient(-45deg,transparent 0,transparent 19px,rgba(255,255,255,0.04) 19px,rgba(255,255,255,0.04) 20px)",
-          }}
-        />
+        {/* Offset border frames */}
+        <div className="absolute -top-4 -left-4 w-full h-full border-4 border-primary/30 z-0" />
+        <div className="absolute -bottom-4 -right-4 w-full h-full border-4 border-primary/20 z-0" />
 
-        {/* Content */}
-        <div className="relative z-10 flex flex-col items-center text-center px-8">
-          <span className="font-inter text-[120px] xl:text-[140px] font-extrabold text-white/[0.08] select-none leading-none tracking-tighter">
-            PT
-          </span>
-          <div className="border-t border-white/20 pt-4 w-full mt-2">
-            <p className="text-white/35 text-[10px] font-semibold tracking-[0.3em] uppercase">Pathway Transportation</p>
-          </div>
-          <p className="text-white/20 text-[11px] mt-5 leading-relaxed">
-            Safe · Reliable · Professional
-          </p>
+        {/* Main image */}
+        <div className="relative border-4 border-primary overflow-hidden shadow-2xl z-10">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=800&q=80"
+            alt="Professional transportation vehicle"
+            className="w-full h-[480px] xl:h-[540px] object-cover"
+          />
+          {/* Dark overlay for better contrast */}
+          <div className="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent" />
+        </div>
+
+        {/* Floating badge */}
+        <div className="absolute -bottom-6 -left-6 bg-primary px-6 py-4 shadow-xl border-4 border-background z-20">
+          <p className="text-white text-sm font-bold uppercase tracking-widest">Ohio Medicaid</p>
+          <p className="text-white/80 text-xs uppercase tracking-wider mt-0.5">Approved Provider</p>
         </div>
       </motion.div>
 

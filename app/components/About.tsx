@@ -18,9 +18,8 @@ export default function About() {
           <div className="space-y-8">
 
             {/* Eyebrow */}
-            <div className="flex items-center gap-3">
-              <div className="h-px w-8 bg-primary" />
-              <p className="text-primary font-semibold tracking-widest uppercase text-xs">Our Story</p>
+            <div>
+              <p className="text-primary font-semibold tracking-widest uppercase text-xs mb-4">Our Story</p>
             </div>
 
             {/* Headline */}
@@ -29,12 +28,6 @@ export default function About() {
                 {about.headline}
                 <span className="block text-primary">{about.headlineAccent}</span>
               </h2>
-              {/* Decorative underline accent */}
-              <div className="mt-4 flex items-center gap-2">
-                <div className="h-[3px] w-10 bg-primary" />
-                <div className="h-[3px] w-3 bg-primary/30" />
-                <div className="h-[3px] w-1.5 bg-primary/15" />
-              </div>
             </div>
 
             {/* Body */}
@@ -92,16 +85,6 @@ export default function About() {
                 </div>
               </div>
             </div>
-
-            <a
-              href="#contact"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary-hover transition-colors group"
-            >
-              Get in touch
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </a>
           </div>
 
           {/* Right: photo with floating card */}
