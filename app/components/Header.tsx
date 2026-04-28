@@ -69,7 +69,7 @@ export default function Header() {
             <a href="#contact" onClick={closeMobile} className="block py-3.5 text-foreground-muted hover:text-foreground transition-colors border-b border-border/50 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded">Contact</a>
             <div className="py-3">
               <a href="#contact" onClick={closeMobile} className="inline-flex items-center justify-center w-full px-5 py-3 bg-primary text-white text-sm font-semibold hover:bg-primary-hover transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2" aria-label="Call now to schedule a ride">
-                Book a Ride to Schedule
+                Book a Ride
               </a>
             </div>
           </div>
