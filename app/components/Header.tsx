@@ -10,16 +10,15 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border" role="banner">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 h-32 sm:h-40">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 h-24 sm:h-28">
         <div className="flex items-center justify-between h-full">
 
           {/* Logo */}
           <a href="/" className="flex items-center group focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2" aria-label="Pathway Transportation Services - Home">
             <img
-              src="/logo.jpg"
+              src="/logo-2.png"
               alt="Pathway Transportation Services logo"
-              className="h-32 sm:h-40 w-auto object-contain"
-              style={{ mixBlendMode: 'darken' }}
+              className="h-28 sm:h-32 w-auto object-contain"
             />
           </a>
 
@@ -37,7 +36,7 @@ export default function Header() {
               className="hidden sm:inline-flex items-center justify-center px-5 py-2.5 bg-primary text-white text-sm font-semibold hover:bg-primary-hover transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
               aria-label="Call now to schedule a ride"
             >
-              Call Now
+              Book a Ride
             </a>
 
             <button
@@ -70,7 +69,7 @@ export default function Header() {
             <a href="#contact" onClick={closeMobile} className="block py-3.5 text-foreground-muted hover:text-foreground transition-colors border-b border-border/50 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded">Contact</a>
             <div className="py-3">
               <a href={`tel:${company.phoneRaw}`} onClick={closeMobile} className="inline-flex items-center justify-center w-full px-5 py-3 bg-primary text-white text-sm font-semibold hover:bg-primary-hover transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2" aria-label="Call now to schedule a ride">
-                Call Now to Schedule
+                Book a Ride to Schedule
               </a>
             </div>
           </div>

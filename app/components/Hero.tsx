@@ -20,7 +20,7 @@ export default function Hero() {
       </div>
 
       {/* Main content */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col min-h-screen py-20 sm:py-32 lg:py-0 relative z-10 justify-center lg:pr-[480px] xl:pr-[520px]">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col min-h-screen pt-28 pb-16 sm:pt-32 sm:pb-24 lg:pt-28 lg:pb-16 relative z-10 justify-center lg:pr-[480px] xl:pr-[520px]">
 
         {/* Eyebrow */}
         <motion.div
@@ -30,14 +30,13 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.1 }}
           aria-hidden="true"
         >
-          <div className="h-px w-10 bg-primary" />
           <span className="text-primary text-xs font-semibold tracking-[0.2em] uppercase">{tagline}</span>
         </motion.div>
 
         {/* Headline */}
         <div className="mb-8 overflow-hidden">
           <motion.h1
-            className="text-5xl sm:text-6xl md:text-7xl xl:text-[88px] font-extrabold tracking-tight leading-[0.92]"
+            className="text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-extrabold tracking-tight leading-[0.92]"
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
@@ -79,7 +78,7 @@ export default function Hero() {
             className="inline-flex items-center gap-2 justify-center px-10 py-5 bg-primary text-white text-base font-bold hover:bg-primary-hover transition-all hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 shadow-lg group"
             aria-label="Request transportation"
           >
-            Request Transportation
+            Request a Ride
             <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden="true">
               <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
@@ -96,26 +95,28 @@ export default function Hero() {
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
         aria-hidden="true"
       >
-        {/* Offset border frames */}
-        <div className="absolute -top-4 -left-4 w-full h-full border-4 border-primary/30 z-0" />
-        <div className="absolute -bottom-4 -right-4 w-full h-full border-4 border-primary/20 z-0" />
-
-        {/* Main image */}
-        <div className="relative border-4 border-primary overflow-hidden shadow-2xl z-10">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/car.webp"
-            alt="Professional transportation vehicle"
-            className="w-full h-[480px] xl:h-[540px] object-cover"
-          />
-          {/* Dark overlay for better contrast */}
-          <div className="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent" />
+        {/* Picture frame */}
+        <div className="relative z-10 p-4 border-4 border-primary/60 shadow-2xl bg-primary/[0.04]">
+          {/* Gold accent corners */}
+          <div className="absolute top-1.5 left-1.5 w-6 h-6 border-t-4 border-l-4 pointer-events-none z-20" style={{ borderColor: '#e2bb54' }} />
+          <div className="absolute top-1.5 right-1.5 w-6 h-6 border-t-4 border-r-4 pointer-events-none z-20" style={{ borderColor: '#e2bb54' }} />
+          <div className="absolute bottom-1.5 left-1.5 w-6 h-6 border-b-4 border-l-4 pointer-events-none z-20" style={{ borderColor: '#e2bb54' }} />
+          <div className="absolute bottom-1.5 right-1.5 w-6 h-6 border-b-4 border-r-4 pointer-events-none z-20" style={{ borderColor: '#e2bb54' }} />
+          <div className="relative overflow-hidden">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/car.webp"
+              alt="Professional transportation vehicle"
+              className="w-full h-[480px] xl:h-[540px] object-cover block"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+          </div>
         </div>
 
         {/* Floating badge */}
-        <div className="absolute -bottom-6 -left-6 bg-primary px-6 py-4 shadow-xl border-4 border-background z-20">
-          <p className="text-white text-sm font-bold uppercase tracking-widest">Ohio Medicaid</p>
-          <p className="text-white/80 text-xs uppercase tracking-wider mt-0.5">Approved Provider</p>
+        <div className="absolute -bottom-5 -left-5 bg-primary px-5 py-3 shadow-lg z-20">
+          <p className="text-white text-xs font-bold uppercase tracking-widest">Ohio Medicaid</p>
+          <p className="text-white/70 text-[10px] uppercase tracking-wider mt-0.5">Approved Provider</p>
         </div>
       </motion.div>
 

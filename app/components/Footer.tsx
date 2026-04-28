@@ -77,10 +77,6 @@ export default function Footer() {
       <div style={{ borderTopColor: "rgba(255,255,255,0.08)" }} className="border-t">
         <div className="max-w-6xl mx-auto px-6 py-6 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-sm text-white/30">&copy; {copyright}. All rights reserved.</p>
-          <div className="flex gap-6 text-sm text-white/30">
-            <a href="#" className="hover:text-white/70 transition-colors">Privacy</a>
-            <a href="#" className="hover:text-white/70 transition-colors">Terms</a>
-          </div>
         </div>
       </div>
     </footer>
