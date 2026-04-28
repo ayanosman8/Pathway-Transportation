@@ -10,8 +10,8 @@ export const company = {
     line2: "",
   },
 
-  phone: "(614) 555-0100",
-  phoneRaw: "6145550100",
+  phone: "(614) 769-4404",
+  phoneRaw: "6147694404",
   email: "Admin@pathwayts.com",
 
   hero: {

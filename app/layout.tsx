@@ -51,7 +51,7 @@ export default function RootLayout({
     "name": "Pathway Transportation Services",
     "description": "Non-emergency medical transportation services in Columbus, Ohio. Approved Ohio Medicaid provider with EMFTS-certified vehicles.",
     "url": "https://pathwayts.com",
-    "telephone": "+1-614-555-0100",
+    "telephone": "+1-614-769-4404",
     "email": "Admin@pathwayts.com",
     "address": {
       "@type": "PostalAddress",
