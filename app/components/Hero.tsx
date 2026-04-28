@@ -20,14 +20,14 @@ export default function Hero() {
       </div>
 
       {/* Two-column layout */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col lg:flex-row items-center min-h-screen pt-28 pb-16 lg:py-0 gap-12 xl:gap-20 relative z-10">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col lg:flex-row items-center min-h-screen pt-28 pb-16 lg:py-0 gap-10 xl:gap-20 relative z-10">
 
         {/* Left: text */}
-        <div className="flex-1 min-w-0">
+        <div className="flex-1 min-w-0 flex flex-col items-center text-center lg:items-start lg:text-left">
 
           {/* Eyebrow */}
           <motion.div
-            className="flex items-center gap-3 mb-10"
+            className="flex items-center gap-3 mb-8"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.1 }}
@@ -39,7 +39,7 @@ export default function Hero() {
           {/* Headline */}
           <div className="mb-8 overflow-hidden">
             <motion.h1
-              className="text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-extrabold tracking-tight leading-[0.92]"
+              className="text-5xl sm:text-6xl md:text-6xl xl:text-7xl font-extrabold tracking-tight leading-[0.92]"
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
@@ -61,7 +61,7 @@ export default function Hero() {
 
           {/* Subheading */}
           <motion.p
-            className="text-foreground/60 text-base sm:text-lg leading-relaxed mb-10 max-w-md"
+            className="text-foreground/60 text-base sm:text-lg leading-relaxed mb-10 max-w-sm sm:max-w-md"
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.65 }}
@@ -71,13 +71,14 @@ export default function Hero() {
 
           {/* CTA */}
           <motion.div
+            className="w-full sm:w-auto"
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.75 }}
           >
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 justify-center px-10 py-5 bg-primary text-white text-base font-bold hover:bg-primary-hover transition-all hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 shadow-lg group"
+              className="flex sm:inline-flex items-center gap-2 justify-center px-10 py-5 bg-primary text-white text-base font-bold hover:bg-primary-hover transition-all hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 shadow-lg group"
               aria-label="Request a ride"
             >
               Request a Ride
@@ -85,6 +86,28 @@ export default function Hero() {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
             </a>
+          </motion.div>
+
+          {/* Mobile image */}
+          <motion.div
+            className="lg:hidden w-full mt-12 relative"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.4 }}
+            aria-hidden="true"
+          >
+            <div className="relative">
+              <div className="absolute -bottom-2 -right-2 w-full h-full bg-primary" />
+              <div className="relative overflow-hidden shadow-xl">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/car.webp" alt="" className="w-full h-56 sm:h-72 object-cover block" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+              </div>
+              <div className="absolute -bottom-4 -left-4 bg-primary px-4 py-2 shadow-lg z-20">
+                <p className="text-white text-xs font-bold uppercase tracking-widest">Ohio Medicaid</p>
+                <p className="text-white/70 text-[10px] uppercase tracking-wider mt-0.5">Approved Provider</p>
+              </div>
+            </div>
           </motion.div>
 
         </div>
