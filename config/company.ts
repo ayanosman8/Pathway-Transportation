@@ -87,5 +87,5 @@ export const company = {
     twitter: "#",
   },
 
-  copyright: "2025 Pathway Transportation",
+  copyright: "2026 Pathway Transportation",
 };
