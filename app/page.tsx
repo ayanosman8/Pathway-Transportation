@@ -2,6 +2,9 @@ import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Services from "./components/Services";
 import About from "./components/About";
+import Credentials from "./components/Credentials";
+import HowItWorks from "./components/HowItWorks";
+import FAQ from "./components/FAQ";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
@@ -19,6 +22,9 @@ export default function Home() {
         <Hero />
         <Services />
         <About />
+        <Credentials />
+        <HowItWorks />
+        <FAQ />
         <Contact />
       </main>
       <Footer />

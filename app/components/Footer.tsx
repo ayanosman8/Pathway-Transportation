@@ -3,7 +3,14 @@ import { company } from "@/config/company";
 export default function Footer() {
   const { name, initials, description, address, phone, phoneRaw, email, social, copyright } = company;
   return (
-    <footer style={{ backgroundColor: "#180C0F" }} className="text-white/70">
+    <footer
+      style={{
+        backgroundColor: "#180C0F",
+        backgroundImage: "radial-gradient(circle, rgba(196,144,42,0.18) 1px, transparent 1px)",
+        backgroundSize: "28px 28px",
+      }}
+      className="text-white/70 border-t-4 border-primary"
+    >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 py-14 sm:py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
 
@@ -15,7 +22,7 @@ export default function Footer() {
               </div>
               <span className="text-lg font-bold text-white">{name}</span>
             </div>
-            <p className="text-white/50 text-sm leading-relaxed max-w-sm">{description}</p>
+            <p className="text-white/65 text-sm leading-relaxed max-w-sm">{description}</p>
             <div className="flex gap-3 mt-8">
               <a href={social.facebook} className="w-10 h-10 border border-white/10 hover:border-primary hover:text-primary flex items-center justify-center transition-colors">
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -41,6 +48,7 @@ export default function Footer() {
             <ul className="space-y-3">
               <li><a href="#services" className="text-white/50 hover:text-white transition-colors text-sm">Services</a></li>
               <li><a href="#about" className="text-white/50 hover:text-white transition-colors text-sm">About Us</a></li>
+              <li><a href="#how-it-works" className="text-white/50 hover:text-white transition-colors text-sm">How It Works</a></li>
               <li><a href="#contact" className="text-white/50 hover:text-white transition-colors text-sm">Contact</a></li>
             </ul>
           </div>
@@ -74,9 +82,9 @@ export default function Footer() {
         </div>
       </div>
 
-      <div style={{ borderTopColor: "rgba(255,255,255,0.08)" }} className="border-t">
+      <div style={{ borderTopColor: "rgba(196,144,42,0.25)" }} className="border-t">
         <div className="max-w-6xl mx-auto px-6 py-6 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-white/30">&copy; {copyright}. All rights reserved.</p>
+          <p className="text-sm text-white/40">&copy; {copyright}. All rights reserved.</p>
         </div>
       </div>
     </footer>

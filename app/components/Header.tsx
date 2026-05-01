@@ -1,7 +1,14 @@
 "use client";
 
 import { useState } from "react";
-import { company } from "@/config/company";
+import { motion, AnimatePresence } from "framer-motion";
+
+const navLinks = [
+  { href: "#services", label: "Services" },
+  { href: "#about", label: "About" },
+  { href: "#how-it-works", label: "How It Works" },
+  { href: "#contact", label: "Contact" },
+];
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -18,63 +25,102 @@ export default function Header() {
             <img
               src="/logo-2.png"
               alt="Pathway Transportation Services logo"
-              className="h-28 sm:h-32 w-auto object-contain"
+              className="h-36 sm:h-44 w-auto object-contain"
             />
           </a>
 
           {/* Desktop nav */}
           <nav className="hidden md:flex items-center gap-8" role="navigation" aria-label="Main navigation">
-            <a href="#services" className="text-foreground-muted hover:text-foreground transition-colors text-sm font-medium focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded px-2 py-1">Services</a>
-            <a href="#about" className="text-foreground-muted hover:text-foreground transition-colors text-sm font-medium focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded px-2 py-1">About</a>
-            <a href="#contact" className="text-foreground-muted hover:text-foreground transition-colors text-sm font-medium focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded px-2 py-1">Contact</a>
+            {navLinks.map(({ href, label }) => (
+              <a key={href} href={href} className="text-foreground-muted hover:text-foreground transition-colors text-sm font-medium focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded px-2 py-1">{label}</a>
+            ))}
           </nav>
 
           {/* CTA + mobile toggle */}
           <div className="flex items-center gap-3">
             <a
               href="#contact"
-              className="hidden sm:inline-flex items-center justify-center px-5 py-2.5 bg-primary text-white text-sm font-semibold hover:bg-primary-hover transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+              className="hidden sm:inline-flex items-center justify-center px-5 py-2.5 bg-primary text-white text-sm font-semibold hover:bg-primary-hover transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-full"
               aria-label="Book a ride"
             >
               Book a Ride
             </a>
 
+            {/* Animated hamburger / X button */}
             <button
               onClick={() => setMobileMenuOpen(v => !v)}
-              className="md:hidden text-foreground-muted hover:text-foreground transition-colors p-1.5 -mr-1 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded"
+              className="md:hidden relative w-8 h-8 flex flex-col items-center justify-center gap-[5px] p-1 -mr-1 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded"
               aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
               aria-expanded={mobileMenuOpen}
               aria-controls="mobile-menu"
             >
-              {mobileMenuOpen ? (
-                <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              ) : (
-                <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-              )}
+              <motion.span
+                className="block h-[2px] w-5 bg-foreground origin-center rounded-full"
+                animate={mobileMenuOpen ? { rotate: 45, y: 7 } : { rotate: 0, y: 0 }}
+                transition={{ duration: 0.25, ease: "easeInOut" }}
+              />
+              <motion.span
+                className="block h-[2px] w-5 bg-foreground rounded-full"
+                animate={mobileMenuOpen ? { opacity: 0, scaleX: 0 } : { opacity: 1, scaleX: 1 }}
+                transition={{ duration: 0.15 }}
+              />
+              <motion.span
+                className="block h-[2px] w-5 bg-foreground origin-center rounded-full"
+                animate={mobileMenuOpen ? { rotate: -45, y: -7 } : { rotate: 0, y: 0 }}
+                transition={{ duration: 0.25, ease: "easeInOut" }}
+              />
             </button>
           </div>
         </div>
       </div>
 
       {/* Mobile drawer */}
-      {mobileMenuOpen && (
-        <div id="mobile-menu" className="md:hidden border-t border-border bg-background/95 backdrop-blur-md shadow-lg" role="navigation" aria-label="Mobile navigation">
-          <div className="max-w-6xl mx-auto px-4 py-2 space-y-0.5">
-            <a href="#services" onClick={closeMobile} className="block py-3.5 text-foreground-muted hover:text-foreground transition-colors border-b border-border/50 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded">Services</a>
-            <a href="#about" onClick={closeMobile} className="block py-3.5 text-foreground-muted hover:text-foreground transition-colors border-b border-border/50 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded">About</a>
-            <a href="#contact" onClick={closeMobile} className="block py-3.5 text-foreground-muted hover:text-foreground transition-colors border-b border-border/50 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded">Contact</a>
-            <div className="py-3">
-              <a href="#contact" onClick={closeMobile} className="inline-flex items-center justify-center w-full px-5 py-3 bg-primary text-white text-sm font-semibold hover:bg-primary-hover transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2" aria-label="Call now to schedule a ride">
-                Book a Ride
-              </a>
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div
+            id="mobile-menu"
+            key="mobile-menu"
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.28, ease: "easeInOut" }}
+            className="md:hidden overflow-hidden border-t border-border bg-background/95 backdrop-blur-md shadow-lg"
+            role="navigation"
+            aria-label="Mobile navigation"
+          >
+            <div className="max-w-6xl mx-auto px-4 py-2 space-y-0.5">
+              {navLinks.map(({ href, label }, i) => (
+                <motion.a
+                  key={href}
+                  href={href}
+                  onClick={closeMobile}
+                  initial={{ opacity: 0, x: -16 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.22, delay: 0.06 + i * 0.07 }}
+                  className="block py-3.5 text-foreground-muted hover:text-foreground transition-colors border-b border-border/50 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded"
+                >
+                  {label}
+                </motion.a>
+              ))}
+              <motion.div
+                className="py-3"
+                initial={{ opacity: 0, x: -16 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.22, delay: 0.27 }}
+              >
+                <a
+                  href="#contact"
+                  onClick={closeMobile}
+                  className="inline-flex items-center justify-center w-full px-5 py-3 bg-primary text-white text-sm font-semibold hover:bg-primary-hover transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                  aria-label="Book a ride"
+                >
+                  Book a Ride
+                </a>
+              </motion.div>
             </div>
-          </div>
-        </div>
-      )}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }

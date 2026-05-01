@@ -18,7 +18,7 @@ export const company = {
     headline: "Moving You Forward,",
     headlineAccent: "Every Mile.",
     subheading:
-      "Safe, reliable, and professional non-emergency medical transportation in Columbus, Ohio. Approved Ohio Medicaid provider with EMFTS-certified vehicles. Serving Medicaid and private-pay clients with flexible scheduling.",
+      "Non-emergency medical transportation in Columbus, Ohio.",
   },
 
   services: [
@@ -26,37 +26,43 @@ export const company = {
       title: "Non-Emergency Medical Transportation",
       description:
         "Dependable rides to and from medical appointments, treatments, and healthcare facilities. EMFTS-certified vehicles ensure safe, comfortable transport.",
-      icon: "medical",
+      icon: "nemt",
+      image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=600&q=80",
     },
     {
       title: "Wheelchair Transportation",
       description:
         "Specialized wheelchair-accessible vehicles with trained drivers for clients requiring mobility assistance.",
-      icon: "senior",
+      icon: "wheelchair",
+      image: "https://images.unsplash.com/photo-1619994403073-2cec844b8e63?auto=format&fit=crop&w=600&q=80",
     },
     {
       title: "Doctor & Dialysis Appointments",
       description:
         "Regular transportation to doctor visits, dialysis treatments, rehabilitation, and therapy sessions. Always on time, always reliable.",
-      icon: "medical",
+      icon: "dialysis",
+      image: "https://images.unsplash.com/photo-1666214280557-f1b5022eb634?auto=format&fit=crop&w=600&q=80",
     },
     {
       title: "Hospital Discharge Transportation",
       description:
         "Safe and comfortable transportation for hospital discharges, ensuring you get home safely after your stay.",
-      icon: "medical",
+      icon: "discharge",
+      image: "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=600&q=80",
     },
     {
       title: "School & Work Transportation",
       description:
         "Transportation for children to and from school or after-school programs, and adults to and from work.",
       icon: "school",
+      image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=600&q=80",
     },
     {
       title: "Local Transportation Services",
       description:
         "Scheduled and dependable transportation for ambulatory passengers throughout Columbus and surrounding areas.",
-      icon: "group",
+      icon: "local",
+      image: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=600&q=80",
     },
   ],
 
