@@ -18,7 +18,7 @@ export default function Home() {
         Skip to main content
       </a>
       <Header />
-      <main id="main-content" className="pt-28 sm:pt-36" role="main">
+      <main id="main-content" className="pt-24 sm:pt-28" role="main">
         <Hero />
         <Services />
         <About />
