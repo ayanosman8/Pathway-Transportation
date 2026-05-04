@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { company } from "@/config/company";
 
-const TYPED_TEXT = "you can count on.";
+const TYPED_TEXT = "every appointment, every time.";
 const TYPE_DELAY = 1000;
 const TYPE_SPEED = 55;
 
@@ -38,7 +38,7 @@ export default function Hero() {
       <div className="absolute inset-0 z-0 bg-gradient-to-br from-[#F5E8D0]/60 via-[#F6F1EA] to-[#EDE6DB]/80" />
 
       {/* Two-column layout */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col lg:flex-row items-center min-h-screen pt-28 pb-16 lg:py-0 gap-10 xl:gap-20 relative z-10">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col lg:flex-row items-center min-h-screen pt-28 pb-16 lg:pt-24 lg:pb-20 gap-10 xl:gap-20 relative z-10">
 
         {/* Left: text */}
         <div className="flex-1 min-w-0 flex flex-col items-center text-center lg:items-start lg:text-left">
@@ -68,8 +68,8 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
             >
-              <span className="block">Every appointment</span>
-              <span className="block">deserves a ride</span>
+              <span className="block">Access to care starts</span>
+              <span className="block">with a ride you can rely on</span>
               <span className="block text-primary">
                 {typed}
                 <span className="inline-block w-[3px] h-[0.85em] bg-primary align-middle ml-1 animate-pulse" />
