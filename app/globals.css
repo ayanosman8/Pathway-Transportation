@@ -15,6 +15,10 @@
   --font-sans: var(--font-inter);
 }
 
+html, body {
+  overflow-x: hidden;
+}
+
 body {
   background-color: #F6F1EA;
   background-image: radial-gradient(rgba(125, 26, 44, 0.13) 1.5px, transparent 1.5px);

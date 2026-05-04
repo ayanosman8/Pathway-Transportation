@@ -130,7 +130,7 @@ export default function Hero() {
 
             {/* Floating badge */}
             <motion.div
-              className="absolute -bottom-5 -left-5 bg-white rounded-2xl px-4 py-3 shadow-xl z-20 animate-float border-2 border-[#C4902A]/30 flex items-center gap-3"
+              className="absolute -bottom-5 left-2 sm:-left-5 bg-white rounded-2xl px-4 py-3 shadow-xl z-20 animate-float border-2 border-[#C4902A]/30 flex items-center gap-3"
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 1.0 }}

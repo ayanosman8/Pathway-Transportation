@@ -37,7 +37,7 @@ export default function Contact() {
           <div className="space-y-6" id="contact-heading">
 
             {/* Book a Ride card */}
-            <div className="bg-primary rounded-2xl p-8 shadow-xl border-2 border-[#C4902A]/40">
+            <div className="bg-primary rounded-2xl p-5 sm:p-8 shadow-xl border-2 border-[#C4902A]/40">
               <p className="text-white/70 text-xs font-bold tracking-[0.25em] uppercase mb-2">Ready to Ride?</p>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-white leading-tight mb-1">Book a Ride</h2>
               <p className="text-white/60 text-sm leading-relaxed mb-6">
@@ -91,7 +91,7 @@ export default function Contact() {
           </div>
 
           {/* Right: form */}
-          <div className="bg-[#F6F1EA] border-2 border-[#C9BAA8] border-t-4 border-t-[#C4902A] p-8 shadow-lg">
+          <div className="bg-[#F6F1EA] border-2 border-[#C9BAA8] border-t-4 border-t-[#C4902A] p-5 sm:p-8 shadow-lg">
 
             {/* Form header */}
             {!submitted && (

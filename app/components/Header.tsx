@@ -16,8 +16,8 @@ export default function Header() {
   function closeMobile() { setMobileMenuOpen(false); }
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border" role="banner">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 h-24 sm:h-28">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border overflow-hidden" role="banner">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 sm:h-20">
         <div className="flex items-center justify-between h-full">
 
           {/* Logo */}
@@ -25,7 +25,7 @@ export default function Header() {
             <img
               src="/logo-2.png"
               alt="Pathway Transportation Services logo"
-              className="h-36 sm:h-44 w-auto object-contain"
+              className="h-16 sm:h-20 w-auto object-contain"
             />
           </a>
 
