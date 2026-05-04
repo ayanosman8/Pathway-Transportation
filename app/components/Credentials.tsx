@@ -57,7 +57,7 @@ const credentials: Credential[] = [
 
 export default function Credentials() {
   return (
-    <section style={{ backgroundColor: "#F0EBE3" }} aria-label="Credentials and certifications">
+    <section style={{ backgroundColor: "#F0EBE3" }} className="overflow-hidden" aria-label="Credentials and certifications">
 
       {/* Top divider */}
       <div className="border-t-2 border-[#C9BAA8]" />
@@ -87,8 +87,8 @@ export default function Credentials() {
             return (
             <motion.div
               key={c.label}
-              initial={{ opacity: 0, x: i % 2 === 0 ? -50 : 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.15 }}
               transition={{ duration: 0.55, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
               className="bg-white border border-[#C9BAA8] rounded-2xl overflow-hidden flex flex-col items-center text-center sm:items-start sm:text-left hover:shadow-md transition-all duration-300 group"
