@@ -21,10 +21,13 @@ export default function Contact() {
     <section id="contact" className="scroll-mt-16 sm:scroll-mt-20" style={{ backgroundColor: "#EDE6DB" }} aria-labelledby="contact-heading">
 
       {/* Section banner */}
-      <div style={{ background: "linear-gradient(135deg, #B8821E 0%, #C4902A 35%, #7D2535 70%, #6B1A2D 100%)" }}>
-        <div className="py-12 sm:py-16 text-center px-4">
-          <p className="text-xs font-bold tracking-[0.35em] uppercase text-white/60 mb-3">Book Today</p>
-          <h3 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white">Your Next Ride Is One Call Away</h3>
+      <div className="px-4 sm:px-6 pt-10 sm:pt-0 sm:block">
+        <div
+          className="max-w-6xl mx-auto rounded-2xl sm:rounded-none py-12 sm:py-16 text-center px-6"
+          style={{ background: "linear-gradient(135deg, #B8821E 0%, #C4902A 35%, #7D2535 70%, #6B1A2D 100%)" }}
+        >
+          <p className="text-xs font-bold tracking-[0.25em] uppercase text-white/60 mb-3">Book Today</p>
+          <h3 className="text-2xl sm:text-5xl font-extrabold tracking-tight text-white">Your Next Ride Is One Call Away</h3>
           <p className="text-sm text-white/55 mt-3 tracking-wide">Call us or send a message — we&apos;ll get you set up right away</p>
         </div>
       </div>
