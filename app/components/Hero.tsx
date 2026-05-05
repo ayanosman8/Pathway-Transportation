@@ -38,7 +38,7 @@ export default function Hero() {
       <div className="absolute inset-0 z-0 bg-gradient-to-br from-[#F5E8D0]/60 via-[#F6F1EA] to-[#EDE6DB]/80" />
 
       {/* Two-column layout */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col lg:flex-row items-center min-h-screen pt-10 pb-16 lg:pt-24 lg:pb-20 gap-10 xl:gap-20 relative z-10">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col lg:flex-row items-center min-h-screen pt-10 pb-16 lg:pt-10 lg:pb-20 gap-10 xl:gap-20 relative z-10">
 
         {/* Left: text */}
         <div className="flex-1 min-w-0 flex flex-col items-center text-center lg:items-start lg:text-left">
